@@ -1,0 +1,21 @@
+header {
+  width: 100%;
+  height: 400px;
+  color: #000;
+
+  .menu {
+    background: green;
+
+    .menu-list {
+      display: inline-block;
+      align-items: center;
+      ul {
+        background: red;
+      }
+    }
+  }
+
+  .content-zone {
+    @include content-zone();
+  }
+}

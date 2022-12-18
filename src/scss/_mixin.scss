@@ -1,0 +1,171 @@
+//FONT MIXINS
+@mixin manuale {
+	font-family: Manuale, sans-serif;
+	font-style: normal;
+}
+
+@mixin montserrat {
+	font-family: Montserrat, sans-serif;
+	font-style: normal;
+}
+
+//content-zone
+@mixin content-zone() {
+	margin-left: auto;
+	margin-right: auto;
+
+	@media only screen and (min-width: 1141px) {
+		$content-width: 1140px;
+		width: $content-width;
+		@content;	
+	}
+
+	@media only screen and (min-width: 961px) and (max-width: 1140px) {
+		$content-width: 960px;
+		width: $content-width;
+		@content; 
+	}
+
+	@media only screen and (max-width: 960px) {
+		$content-width: 480px;
+		width: $content-width;
+		@content;	
+	} 
+}
+
+@mixin centering{
+	text-align: center;
+	vertical-align: middle;
+}
+
+@mixin bank-terms {
+	flex-grow: 1;
+	@include centering;
+}
+
+@mixin green-square {
+	width: 61px;
+	height: 54px;
+	border-radius: 5px;
+	background: rgba(99, 213, 145, 0.8);
+}
+
+@mixin light-green-square {
+	position: relative;
+	left: 28px;
+	bottom: 36px;
+	width: 61px;
+	height: 54px;
+	border-radius: 5px;
+	background: rgba(30, 228, 109, 0.38);
+}
+
+//ICON MIXINS
+@mixin img($name, $width, $height) {
+	background: url("/assets/img/#{$name}.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	min-width: $width;
+	min-height: $height;
+}
+
+@mixin mail-icon {
+	@include img(mail, 21px, 21px);
+}
+
+@mixin phone-icon {
+	@include img(phone, 21px, 21px);
+}
+
+@mixin check-icon {
+	.icon {
+		@include img(check, 29px, 29px);
+	}
+}
+@mixin nope-icon {
+	.icon {
+		@include img(nope, 29px, 29px);
+	}
+}
+
+@mixin bank-description ($advantage) {
+
+	padding: 7px 50px 10px 40px;
+	display: flex;
+	height: 148px;
+	
+	.title {
+		width: 150px;
+		@include unimanuale(600, 18px, 34px, #000000);
+	}
+	.info {
+		margin-left: 105px;
+		vertical-align: middle;
+
+		.info-form {
+			display: flex;
+			.icon {
+				
+			}
+		}
+		
+
+		@if $advantage {
+			@include check-icon;
+		}
+		@else {
+			@include nope-icon;
+		}
+		
+		.text {
+			display: inline;
+			margin-left: 28px;
+			@include unimanuale(500, 18px, 29px, #3C3B3B);
+		}
+	}
+}
+
+
+//TEXT MIXINS
+
+@mixin unimanuale($font-weight, $font-size, $line-height, $color) {
+	//used in heared titles
+	@include manuale;
+	font-weight: $font-weight;
+	font-size: $font-size;
+	line-height: $line-height;
+	color: $color;
+}
+
+@mixin unimontserrat($font-weight, $font-size, $line-height, $color) {
+	//used in heared titles
+	@include montserrat;
+	font-weight: $font-weight;
+	font-size: $font-size;
+	line-height: $line-height;
+	color: $color;
+}
+
+@mixin menu-text {
+	//used in main menu
+	@include montserrat;
+	font-weight: 600;
+	font-size: 18px;	
+	line-height: 22px;
+	color: #FFFFFF;
+}
+
+//used in .how-its-works blocks
+@mixin block-title {
+	@include manuale;
+	font-weight: 600;
+	font-size: 20px;
+	line-height: 27px;
+}
+
+@mixin block-info {
+	@include manuale;
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 25px;
+}
