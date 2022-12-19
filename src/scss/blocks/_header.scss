@@ -1,16 +1,28 @@
 header {
   width: 100%;
-  height: 400px;
-  color: #000;
+  height: 100px;
+  color: #61EB00;
+  background: #275D00;
+  
+  .logo {
+    color: #61EB00;
+    font-size: 64px;
+    
+    span {
+      color: #EF0040;
+    }
+  }
 
   .menu {
-    background: green;
+    
+
 
     .menu-list {
-      display: inline-block;
+      display: inline;
       align-items: center;
       ul {
         background: red;
+        margin: 10px 50px;
       }
     }
   }

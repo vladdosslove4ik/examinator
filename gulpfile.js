@@ -11,12 +11,11 @@ const {
 
 const uglify = require('gulp-uglify');
 const rename = require('gulp-rename');
-const sass = require('gulp-sass');
+const sass = require('gulp-sass')(require('sass'));
 const autoprefixer = require('gulp-autoprefixer');
 const cssnano = require('gulp-cssnano');
 const concat = require('gulp-concat');
 const clean = require('gulp-clean');
-const imagemin = require('gulp-imagemin');
 const changed = require('gulp-changed');
 const browsersync = require('browser-sync').create();
 
@@ -65,6 +64,12 @@ function css() {
       .pipe(browsersync.stream());
 }
 
+function html() {
+  const source = './**/*.html';
+  return src(source)
+      .pipe(browsersync.stream());
+}
+
 // Optimize images
 
 function img() {
@@ -76,9 +81,9 @@ function img() {
 // Watch files
 
 function watchFiles() {
-  watch('./src/scss/*', css);
+  watch('./*.html', html)
+  watch('./src/scss/**/*', css);
   watch('./src/js/*', js);
-  watch('./src/img/*', img);
 }
 
 // BrowserSync
@@ -95,5 +100,5 @@ function browserSync() {
 // Tasks to define the execution of the functions simultaneously or in series
 
 exports.watch = parallel(watchFiles, browserSync);
-exports.default = series(clear, parallel(js, css, img));
+exports.default = series(clear, parallel(js, css, html));
   
