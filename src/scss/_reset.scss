@@ -45,3 +45,9 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
+// remove styles from hrefs and make a pointer
+a {
+  all: unset;
+  cursor:pointer;
+}

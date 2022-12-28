@@ -9,6 +9,12 @@
 	font-style: normal;
 }
 
+@mixin header-content-zone() {
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+}
+
 //content-zone
 @mixin content-zone() {
 	margin-left: auto;

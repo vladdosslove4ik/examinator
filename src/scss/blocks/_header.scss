@@ -4,10 +4,25 @@ header {
   color: #61EB00;
   background: #275D00;
   
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  align-items: center;
+  
+  
   .logo {
-    color: #61EB00;
+
+    display: flex;
+    margin-left: 100px;
+    
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
     font-size: 64px;
     
+    color: #61EB00;
+
     span {
       color: #EF0040;
     }
@@ -15,19 +30,88 @@ header {
 
   .menu {
     
+    &__wrapper {
+      display: flex;
+      justify-content: space-between;
+    }
 
+    display: flex;
+    align-items: center;
 
-    .menu-list {
-      display: inline;
-      align-items: center;
-      ul {
-        background: red;
-        margin: 10px 50px;
+    ul {
+      overflow: hidden;
+      display: flex;
+
+      li {
+        margin-left: 25px;
+        margin-right: 25px;
+
+        font-family: 'Inter', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 36px;
+
+        color: #61EB00
+
+        a {
+          color: inherit;
+          text-decoration: inherit;
+        }
+        
+        a:hover {
+          color: #00C397;
+        }
+
+        a:active {
+          color: #FFFFFF;
+        }
       }
     }
   }
 
-  .content-zone {
-    @include content-zone();
+  .profile {
+    p {
+      display: inline;
+    }
+
+    &-img__wrapper {
+      
+      display: block;
+    }
   }
+
+
+  .account {
+    display: flex;
+    flex-direction: column;
+    color: #FFFFFF;
+    margin-right: 10px;
+
+    
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+
+    &__wrapper {
+      display: flex;
+
+      margin-right: 25px;
+      margin-top: 10px;
+    }
+
+    p {
+      padding: 10px;
+      
+    }
+  }
+
+
+    
 }
+  
+
+.content-zone {
+  @include content-zone();
+}
+
