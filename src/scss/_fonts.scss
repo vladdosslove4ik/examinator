@@ -3,5 +3,13 @@
   src: url(/fonts/Inter.ttf);
 }
 
+@mixin font-inter($font-weight, $font-size, $color) {
+	font-family: Inter, sans-serif;
+	font-style: normal;
+	font-weight: $font-weight;
+	font-size: $font-size;
+	color: $color;
+}
+
 
 //C:\Users\Vlad\Documents\test-site\

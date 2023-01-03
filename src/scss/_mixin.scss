@@ -1,14 +1,3 @@
-//FONT MIXINS
-@mixin manuale {
-	font-family: Manuale, sans-serif;
-	font-style: normal;
-}
-
-@mixin montserrat {
-	font-family: Montserrat, sans-serif;
-	font-style: normal;
-}
-
 @mixin header-content-zone() {
 	margin-left: auto;
 	margin-right: auto;
@@ -23,7 +12,8 @@
 	@media only screen and (min-width: 1141px) {
 		$content-width: 1140px;
 		width: $content-width;
-		@content;	
+		@content;
+
 	}
 
 	@media only screen and (min-width: 961px) and (max-width: 1140px) {
@@ -43,6 +33,53 @@
 	text-align: center;
 	vertical-align: middle;
 }
+
+// Buttons
+@mixin button ($height, $bg) {
+	padding: 0px;
+	height: $height;
+	border: 0px;
+	color: #FFFFFF;
+	background: $bg;
+	cursor: pointer;
+}
+
+@mixin child-margin-cleaner {
+	:first-child {
+		margin-left: 0px;
+	}
+	:last-child {
+		margin-right: 0px;
+	}
+}
+
+
+@mixin red-button {
+	@include button(40px, $red-button);
+	
+	&:hover {
+		background: $red-button-hover;
+	}
+
+	&:active {
+		background: $red-button-active;
+	}
+}
+
+@mixin green-button {
+	@include button(40px, $green-button);
+	
+	&:hover {
+		background: $green-button-hover;
+	}
+
+	&:active {
+		background: $green-button-active;
+	}
+}
+
+
+
 
 @mixin bank-terms {
 	flex-grow: 1;
@@ -77,21 +114,6 @@
 
 @mixin mail-icon {
 	@include img(mail, 21px, 21px);
-}
-
-@mixin phone-icon {
-	@include img(phone, 21px, 21px);
-}
-
-@mixin check-icon {
-	.icon {
-		@include img(check, 29px, 29px);
-	}
-}
-@mixin nope-icon {
-	.icon {
-		@include img(nope, 29px, 29px);
-	}
 }
 
 @mixin bank-description ($advantage) {
