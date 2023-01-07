@@ -1,7 +1,8 @@
 .body {
     @include content-zone;
     margin-top: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 120px;
+    clear: both;
     
     input {
         all: unset;

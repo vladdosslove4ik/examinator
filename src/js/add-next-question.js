@@ -30,6 +30,7 @@ var testsnippet = '' +
 	$( document ).ready(function() {
 		$("#new-question").on("click", function(){
 			$(".add-question-button").before(testsnippet);
+            recount();
 		});
 	});
 
@@ -39,7 +40,20 @@ var testsnippet = '' +
 	$( document ).on('DOMNodeInserted', function() {
 		$(".delete").on("click", function(){
 			$(this).closest(".test-question").remove();
+            recount();
 		});
 	});
 
 })(jQuery);
+
+function recount() {
+    var numQuestions= $(".test-question").length;
+    
+    if (numQuestions == 1) {
+        $(".numquestions").text(numQuestions + ' question');
+    }
+    else {
+        $(".numquestions").text(numQuestions + ' questions');
+    }
+    
+}
