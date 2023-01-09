@@ -4,6 +4,12 @@
     margin-bottom: 120px;
     clear: both;
     
+    input[type="checkbox"] {
+        appearance: checkbox;
+        width: 20px;
+        height: 20px;
+    }
+
     input {
         all: unset;
         border: 0px;
@@ -18,6 +24,23 @@
 
             @include font-inter(400, 32px, $font-color);
         }
+
+        .question-title {
+            color: $font-color;
+
+            @include font-inter(400, 32px, $font-color);
+        }
+        .question-info {
+            color: $font-color;
+            @include font-inter(400, 32px, $font-color);
+        }
+
+        .answer-checbox {
+
+            width: 10px;
+            height: 10px;
+        }
+
 
         &::placeholder {
             color: #880025;
@@ -144,6 +167,12 @@
                 flex-wrap: wrap;
                 flex-direction: row;
 
+                .answer {
+                    display: flex;
+                    align-items: center;
+                }
+
+
                 button {
                     @include font-inter(400, 16px, $font-color);
                     @include green-button;
@@ -152,7 +181,7 @@
                     padding-right: 20px;
                     margin: 10px 20px;
                     
-                    &#add {
+                    &.add {
                         @include font-inter(700, 24px, #FFFFFF);
                         padding: 0px;
                         vertical-align: middle;

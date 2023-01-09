@@ -18,7 +18,7 @@ var testsnippet = '' +
 '              <button class="answer">G. Answer 7</button>' + 
 '              <button class="answer">H. Answer 8</button>' + 
 '              <button class="answer">I. Answer 9</button>' + 
-'              <button id="add">+</button>' + 
+'              <button class="add">+</button>' + 
 '            </div>' + 
 '          </div>' + 
 '        </div>' + 
@@ -41,6 +41,19 @@ var testsnippet = '' +
 		$(".delete").on("click", function(){
 			$(this).closest(".test-question").remove();
             recount();
+		});
+	});
+
+})(jQuery);
+
+// add new test varaint
+(function($) {
+	$( document ).ready( function() {
+		$(".add").on("click", function(){
+
+			let $cloneable = $(".answer__wrapper").first().clone(true);
+			console.log($cloneable.length)
+			$(this).closest("button.add").before($cloneable);
 		});
 	});
 
