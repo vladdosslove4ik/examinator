@@ -3,56 +3,6 @@
     margin-top: 10px;
     margin-bottom: 120px;
     clear: both;
-    
-    input[type="checkbox"] {
-        appearance: checkbox;
-        width: 20px;
-        height: 20px;
-    }
-
-    input {
-        all: unset;
-        border: 0px;
-        display: flex;
-        display: inline;
-        width: 100%;
-
-        .test-title{
-            color: $font-color;
-            text-align: center;
-            min-width: 100px;
-
-            @include font-inter(400, 32px, $font-color);
-        }
-
-        .question-title {
-            color: $font-color;
-
-            @include font-inter(400, 32px, $font-color);
-        }
-        .question-info {
-            color: $font-color;
-            @include font-inter(400, 32px, $font-color);
-        }
-
-        .answer-checbox {
-
-            width: 10px;
-            height: 10px;
-        }
-
-
-        &::placeholder {
-            color: #880025;
-        }
-
-        &:active {
-            background: #00c397;  
-        }
-        &:hover {
-            background: #00c397;
-        }
-    }
 
     .test-header { 
         padding: 15px 50px;

@@ -36,9 +36,9 @@
       </div>
     </header>
     <div class="body">
-      <form action=""></form>
+      <form action="" method="post">
         <div class="test-header">
-          <input type="text" id="test-title" class="test-title" placeholder="Test name"  minlength="5" maxlength="63" size="1"></input>
+          <input type="text" name="test-title" id="test-title" class="test-title" placeholder="Test name"  minlength="5" maxlength="63" size="1"></input>
           <div class="test-controls__wrapper">
             <div class="test-info">
               <p class="type">Test</p>
@@ -46,11 +46,57 @@
               <p class="time">Unlimited</p>
             </div>
             <div class="control-buttons">
-              <button id="cancel">Cancel</button>
-              <button id="save-form">Save</button>
+              <button type="button" id="cancel">Cancel</button>
+              <button type="submit" id="save-form">Save</button>
             </div>
           </div>
         </div>
+        <!-- Question Pattern for copying -->
+        <div class="test-question" style="display: none;">
+          <div class="test-question__wrapper">
+            <div class="question-title-controls__wrapper">
+              <input 
+                type="text" 
+                name="question-title"
+                class="question-title"
+                placeholder="Title of question">
+              <div class="question-control-buttons">
+                <button type="button" class="delete">X</button>
+              </div>
+            </div>
+            <input 
+              type="text"
+              name="question-info[]"
+              class="question-info[]"
+              id=""
+              placeholder="Additional info">
+            <div class="question-answers__wrapper">
+              <div class="answer__wrapper">
+                <input type="checkbox"
+                name="checkbox-answer[]">
+                <input type="text"
+                  name="input-answer[]"
+                  class="input-answer"
+                  placeholder="Answer">
+                  
+              </div>
+              <div class="answer__wrapper">
+                <input type="checkbox"
+                name="checkbox-answer[]">
+                <input type="text"
+                  name="input-answer[]"
+                  class="input-answer"
+                  placeholder="Answer">
+                  
+              </div>
+             
+              <button type="button" class="add">+</button>
+            </div>
+          </div>
+        </div>
+        <!--  -->
+        <!--  -->
+        <!--  -->
         <div class="test-question">
           <div class="test-question__wrapper">
             <div class="question-title-controls__wrapper">
@@ -61,14 +107,14 @@
             </div>
             <div class="question-info">Additional info Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam corrupti officiis eos laboriosam? Fuga dignissimos tempora hic accusamus a exercitationem numquam, obcaecati, eveniet quia sequi consequatur magni reprehenderit impedit porro.</div>
             <div class="question-answers__wrapper">
-              <button class="answer">A. Answer 1</button>
-              <button class="answer">B. Answer 2</button>
-              <button class="answer">C. Answer 3</button>
-              <button class="add">+</button>
+              <button type="button" class="answer">A. Answer 1</button>
+              <button type="button" class="answer">B. Answer 2</button>
+              <button type="button" class="answer">C. Answer 3</button>
+              <button type="button" class="add">+</button>
             </div>
           </div>
         </div>
-
+          
         <div class="test-question">
           <div class="test-question__wrapper">
             <div class="question-title-controls__wrapper">
@@ -78,28 +124,41 @@
                 class="question-title"
                 placeholder="Title of question">
               <div class="question-control-buttons">
-                <button class="delete">X</button>
+                <button type="button" class="delete">X</button>
               </div>
             </div>
             <input 
               type="text"
-              name="question-info"
-              class="question-info"
+              name="question-info[]"
+              class="question-info[]"
               id=""
               placeholder="Additional info">
             <div class="question-answers__wrapper">
               <div class="answer__wrapper">
+                <input type="checkbox"
+                name="checkbox-answer[]">
                 <input type="text"
+                  name="input-answer[]"
                   class="input-answer"
                   placeholder="Answer">
-                  <input type="checkbox">
+                  
               </div>
-              <button class="add">+</button>
+              <div class="answer__wrapper">
+                <input type="checkbox"
+                name="checkbox-answer[]">
+                <input type="text"
+                  name="input-answer[]"
+                  class="input-answer"
+                  placeholder="Answer">
+                  
+              </div>
+             
+              <button type="button" class="add">+</button>
             </div>
           </div>
         </div>
         <div class="add-question-button">
-          <button id="new-question">+</button>
+          <button type="button" id="new-question">+</button>
         </div>
       </form>
     </div>
@@ -107,7 +166,8 @@
 
     </footer>
 
-    <script src="src/js/add-next-question.js"></script>
+    <!-- <script src="src/js/add-next-question.js"></script> -->
+    <script src="src/js/button-control.js"></script>
 </body>
 
 </html>
