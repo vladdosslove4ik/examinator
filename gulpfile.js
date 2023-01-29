@@ -46,8 +46,15 @@ function js() {
 
 // CSS function 
 
-function css() {
-  const source = './src/scss/main.scss';
+function parse_css() {
+  const test_create = './src/scss/test-create.scss';
+  const library = './src/scss/library.scss';
+
+  css(test_create);
+  css(library);
+}
+
+function css(source) {
 
   return src(source)
       .pipe(changed(source))
@@ -62,6 +69,7 @@ function css() {
       .pipe(cssnano())
       .pipe(dest('./assets/css/'))
       .pipe(browsersync.stream());
+      
 }
 
 function html() {
@@ -82,7 +90,7 @@ function img() {
 
 function watchFiles() {
   watch('./*.html', html)
-  watch('./src/scss/**/*', css);
+  watch('./src/scss/**/*', parse_css);
   watch('./src/js/*', js);
 }
 
@@ -91,7 +99,8 @@ function watchFiles() {
 function browserSync() {
   browsersync.init({
       server: {
-          baseDir: './'
+          baseDir: './',
+          index: "test-create.html"
       },
       port: 3000
   });
@@ -100,5 +109,5 @@ function browserSync() {
 // Tasks to define the execution of the functions simultaneously or in series
 
 exports.watch = parallel(watchFiles, browserSync);
-exports.default = series(clear, parallel(js, css, html));
+exports.default = series(clear, parallel(js, parse_css, html));
   

@@ -12,30 +12,12 @@ input {
     display: inline;
     width: 100%;
 
-    .test-title{
-        color: $font-color;
-        text-align: center;
-        min-width: 100px;
-
-        @include font-inter(400, 32px, $font-color);
-    }
-
-    .question-title {
-        color: $font-color;
-        @include font-inter(400, 32px, $font-color);
-    }
-    .question-info {
-        color: $font-color;
-        @include font-inter(400, 32px, $font-color);
-    }
-    
     &.input-answer {
         background: $green-button;
         height: 20px;
         padding: 10px 20px;
         @include font-inter(400, 16px, #FFFFFF);
     }
-
 
     &::placeholder {
         color: #880025;
@@ -47,6 +29,27 @@ input {
     &:hover {
         background: #00c397;
     }
+}
+    
+
+.test-title{
+    color: $font-color;
+    text-align: center;
+    min-width: 100px;
+
+    @include font-inter(400, 32px, $font-color);
+}
+
+.question-title {
+    padding: 5px;
+    color: $font-color;
+    @include font-inter(400, 32px, $font-color);
+}
+.question-info {
+    padding: 5px;
+    margin: 10px 0px;
+    color: $font-color;
+    @include font-inter(400, 20px, $font-color);
 }
 
 .answer__wrapper {

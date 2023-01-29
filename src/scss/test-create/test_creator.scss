@@ -108,10 +108,6 @@
                 @include child-margin-cleaner;
                 
             }
-            &-info {
-                margin: 10px 0px;
-                @include font-inter(400, 20px, $font-color);
-            }
             &-answers__wrapper {
                 display: flex;
                 flex-wrap: wrap;

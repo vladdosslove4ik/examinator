@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="assets/css/main.min.css">
+    <title>Create test</title>
+    <link rel="stylesheet" href="assets/css/test-create.min.css">
     <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
 </head>
 
@@ -15,7 +15,7 @@
       <div class="menu__wrapper">
         <nav class="menu">
                 <div class="menu-item"><a href="#">Main</a></div>
-                <div class="menu-item"><a href="#">Library</a></div>
+                <div class="menu-item"><a href="/libraty.html">Library</a></div>
                 <div class="menu-item" style="color: #FFFFFF;"><a href="#">Create</a></div>
                 <div class="menu-item"><a href="#">About</a></div>
         </div>
@@ -36,13 +36,13 @@
       </div>
     </header>
     <div class="body">
-      <form action="" method="post">
+      <form action="http://127.0.0.1:8002/addForm/" method="post">
         <div class="test-header">
           <input type="text" name="test-title" id="test-title" class="test-title" placeholder="Test name"  minlength="5" maxlength="63" size="1"></input>
           <div class="test-controls__wrapper">
             <div class="test-info">
               <p class="type">Test</p>
-              <p class="numquestions">18 questions</p>
+              <p class="numquestions">1 question</p>
               <p class="time">Unlimited</p>
             </div>
             <div class="control-buttons">
@@ -100,24 +100,6 @@
         <div class="test-question">
           <div class="test-question__wrapper">
             <div class="question-title-controls__wrapper">
-              <div class="question-title">1. Title of question</div>
-              <div class="question-control-buttons">
-                <button class="delete">X</button>
-              </div>
-            </div>
-            <div class="question-info">Additional info Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam corrupti officiis eos laboriosam? Fuga dignissimos tempora hic accusamus a exercitationem numquam, obcaecati, eveniet quia sequi consequatur magni reprehenderit impedit porro.</div>
-            <div class="question-answers__wrapper">
-              <button type="button" class="answer">A. Answer 1</button>
-              <button type="button" class="answer">B. Answer 2</button>
-              <button type="button" class="answer">C. Answer 3</button>
-              <button type="button" class="add">+</button>
-            </div>
-          </div>
-        </div>
-          
-        <div class="test-question">
-          <div class="test-question__wrapper">
-            <div class="question-title-controls__wrapper">
               <input 
                 type="text" 
                 name="question-title"
@@ -129,8 +111,8 @@
             </div>
             <input 
               type="text"
+              class="question-info"
               name="question-info[]"
-              class="question-info[]"
               id=""
               placeholder="Additional info">
             <div class="question-answers__wrapper">
@@ -166,8 +148,8 @@
 
     </footer>
 
-    <!-- <script src="src/js/add-next-question.js"></script> -->
     <script src="src/js/button-control.js"></script>
+    <script src="src/js/input-auto-resize.js"></script>
 </body>
 
 </html>
