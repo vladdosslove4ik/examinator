@@ -1,0 +1,62 @@
+input[type="checkbox"] {
+    appearance: checkbox;
+    width: 40px;
+    height: 40px;
+    margin: 10px;
+}
+
+input {
+    all: unset;
+    border: 0px;
+    display: flex;
+    display: inline;
+    width: 100%;
+
+    &.input-answer {
+        background: $green-button;
+        height: 20px;
+        padding: 10px 20px;
+        @include font-inter(400, 16px, #FFFFFF);
+    }
+
+    &::placeholder {
+        color: #880025;
+    }
+
+    &:active {
+        background: #00c397;  
+    }
+    &:hover {
+        background: #00c397;
+    }
+}
+    
+
+.test-title{
+    color: $font-color;
+    text-align: center;
+    min-width: 100px;
+
+    @include font-inter(400, 32px, $font-color);
+}
+
+.question-title {
+    padding: 5px;
+    color: $font-color;
+    @include font-inter(400, 32px, $font-color);
+}
+.question-info {
+    padding: 5px;
+    margin: 10px 0px;
+    color: $font-color;
+    @include font-inter(400, 20px, $font-color);
+}
+
+.answer__wrapper {
+    display: flex;
+    align-items: center;
+
+    // input {
+    //     @include font-inter(400, 16px, $font-color);
+    // }
+}
