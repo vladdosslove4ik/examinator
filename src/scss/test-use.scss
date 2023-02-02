@@ -1,0 +1,22 @@
+@import "reset";
+
+// standard imports
+@import "_variable";
+@import "_fonts";
+@import "_mixin";
+@import "_regions";
+
+// library imports
+
+@import "blocks/_header.scss";
+@import "blocks/_footer.scss";
+
+@import "test-use/test.scss";
+
+body {
+    @media screen and (max-width: 1921px) {
+        max-width: 1920px;
+        
+    }
+    
+}

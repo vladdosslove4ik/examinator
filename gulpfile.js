@@ -50,8 +50,6 @@ function js() {
 
 function css(source) {
   var source = './src/scss/test-create.scss';
-
-  
   src(source)
     .pipe(changed(source))
     .pipe(sass())
@@ -67,7 +65,21 @@ function css(source) {
     .pipe(browsersync.stream());
   
   source = './src/scss/library.scss';
-      
+  src(source)
+    .pipe(changed(source))
+    .pipe(sass())
+    .pipe(autoprefixer({
+        overrideBrowserslist: ['last 2 versions'],
+        cascade: false
+    }))
+    .pipe(rename({
+        extname: '.min.css'
+    }))
+    .pipe(cssnano())
+    .pipe(dest('./assets/css/'))
+    .pipe(browsersync.stream());
+
+  source = './src/scss/test-use.scss';
   src(source)
     .pipe(changed(source))
     .pipe(sass())

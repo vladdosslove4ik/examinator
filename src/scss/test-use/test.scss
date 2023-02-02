@@ -1,0 +1,143 @@
+.body {
+    @include content-zone;
+    margin-top: 10px;
+    margin-bottom: 120px;
+    clear: both;
+
+    .test-header { 
+        padding: 15px 50px;
+        background: $bg-color;
+        color: $font-color;
+        height: 100px;
+
+        .title {
+            text-align: center;
+
+            @include font-inter(400, 32px, $font-color);
+
+        }
+    }
+
+    .test-controls__wrapper {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        align-items: center;
+
+        @include font-inter(400, 20px, $font-color);
+
+        .test-info {
+            display: flex;
+            
+            :first-child {
+                margin-left: 0px;
+            }
+            
+            p {
+                margin: 0px 25px;
+            }
+            
+    
+        }
+
+        .control-buttons {
+            :last-child {
+                margin-right: 0px;
+            }
+
+            button {
+                width: 120px;
+                height: 40px;
+                margin: 0px 15px;
+                border: 0px;
+                margin-bottom: 30px;
+
+                @include font-inter(400, 16px, #FFFFFF);
+
+                &#cancel {
+                    @include red-button;
+                }
+
+                &#save-form {
+                    
+                    
+                    @include green-button;
+                    
+                }
+
+                
+            }
+        }
+    }
+
+    .test-question {
+        margin: 15px auto;
+        padding: 15px 50px;
+        background: $bg-color;
+        
+        &__wrapper {
+            display: flex;
+            flex-direction: column;
+
+            .additional-info {
+                margin: 10px 0px;
+                @include font-inter(400, 20px, $font-color);
+            }
+        }
+
+        .question {
+            &-title-controls__wrapper {
+                display: flex;
+                justify-content: space-between;
+                flex-direction: row;
+                align-items: center;
+            }
+
+
+            &-title {
+                display: flex;
+                @include font-inter(400, 32px, $font-color);
+            }
+            &-control-buttons {
+                display: flex;
+
+                button {
+                    width: 40px;
+                    margin: 0px 20px;
+                    
+                    font-weight: 700;
+                    font-size: 32px;
+
+                    @include red-button;
+                }
+                @include child-margin-cleaner;
+                
+            }
+            &-answers__wrapper {
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: row;
+
+                button {
+                    @include font-inter(400, 16px, $font-color);
+                    @include green-button;
+        
+                    padding-left: 20px;
+                    padding-right: 20px;
+                    margin: 10px 20px;
+
+                    &.selected {
+                        background: $green-button-selected;
+                    }
+
+                    
+                }
+                
+                :first-child {
+                    margin-left: 0px;
+                }
+
+            }
+        }
+    }
+}
