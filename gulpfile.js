@@ -44,31 +44,59 @@ function js() {
       .pipe(browsersync.stream());
 }
 
+
 // CSS function 
 
-function parse_css() {
-  const test_create = './src/scss/test-create.scss';
-  const library = './src/scss/library.scss';
-
-  css(test_create);
-  css(library);
-}
 
 function css(source) {
+  var source = './src/scss/test-create.scss';
+
+  
+  src(source)
+    .pipe(changed(source))
+    .pipe(sass())
+    .pipe(autoprefixer({
+        overrideBrowserslist: ['last 2 versions'],
+        cascade: false
+    }))
+    .pipe(rename({
+        extname: '.min.css'
+    }))
+    .pipe(cssnano())
+    .pipe(dest('./assets/css/'))
+    .pipe(browsersync.stream());
+  
+  source = './src/scss/library.scss';
+      
+  src(source)
+    .pipe(changed(source))
+    .pipe(sass())
+    .pipe(autoprefixer({
+        overrideBrowserslist: ['last 2 versions'],
+        cascade: false
+    }))
+    .pipe(rename({
+        extname: '.min.css'
+    }))
+    .pipe(cssnano())
+    .pipe(dest('./assets/css/'))
+    .pipe(browsersync.stream());
+  
+  source = './src/scss/login.scss';
 
   return src(source)
-      .pipe(changed(source))
-      .pipe(sass())
-      .pipe(autoprefixer({
-          overrideBrowserslist: ['last 2 versions'],
-          cascade: false
-      }))
-      .pipe(rename({
-          extname: '.min.css'
-      }))
-      .pipe(cssnano())
-      .pipe(dest('./assets/css/'))
-      .pipe(browsersync.stream());
+    .pipe(changed(source))
+    .pipe(sass())
+    .pipe(autoprefixer({
+        overrideBrowserslist: ['last 2 versions'],
+        cascade: false
+    }))
+    .pipe(rename({
+        extname: '.min.css'
+    }))
+    .pipe(cssnano())
+    .pipe(dest('./assets/css/'))
+    .pipe(browsersync.stream());
       
 }
 
@@ -90,7 +118,7 @@ function img() {
 
 function watchFiles() {
   watch('./*.html', html)
-  watch('./src/scss/**/*', parse_css);
+  watch('./src/scss/**/*.scss', css);
   watch('./src/js/*', js);
 }
 
@@ -109,5 +137,5 @@ function browserSync() {
 // Tasks to define the execution of the functions simultaneously or in series
 
 exports.watch = parallel(watchFiles, browserSync);
-exports.default = series(clear, parallel(js, parse_css, html));
+exports.default = series(clear, parallel(js, css, html));
   

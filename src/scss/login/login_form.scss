@@ -1,0 +1,43 @@
+
+.body {
+    @include content-zone;
+}
+
+.login-form {
+    padding: 50px 20px;
+    margin: 20px auto;
+    width: 400px;
+    background: $bg-color;
+}
+
+.signup-form {
+    padding: 50px 20px;
+    margin: 20px auto;
+    width: 400px;
+    background: $bg-color;
+}
+
+
+
+label {
+    @include font-inter(400, 32px, $font-color);
+}
+
+input {
+    padding: 5px;
+    margin: 10px 0px;
+    color: $font-color;
+    background: $bg-color;
+    @include font-inter(400, 20px, $font-color);
+}
+
+.button-container {
+    margin: auto;
+}
+button {
+    @include green-button;
+    text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    
+}

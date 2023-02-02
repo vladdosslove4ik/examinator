@@ -1,0 +1,54 @@
+.body {
+    @include content-zone;
+}
+
+.test {
+    background: $bg-color;
+    margin: 20px auto;
+
+    &__wrapper {
+        padding: 10px 20px;
+    }
+
+    &-controls__wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        vertical-align: middle;
+        align-items: center;
+        justify-content: space-between;
+
+        .title {
+            @include font-inter(500, 32px, $font-color);
+        }
+        
+    }
+    &-controls {
+        button {
+            &.test {
+                @include green-button;
+                padding: 10px 20px;
+            }
+            &.use {
+                @include red-button;
+                padding: 10px 20px;
+            }
+            margin: 10px;
+        }
+
+    }
+
+    .test-info {
+        display: flex;
+        flex-wrap: wrap;
+        vertical-align: middle;
+        align-items: center;
+        justify-content: flex-start;
+
+        @include font-inter(400, 16px, $font-color);
+
+        div {
+            margin: 0px 20px;
+        }
+
+    }
+}
