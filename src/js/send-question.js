@@ -19,36 +19,57 @@ function callbackFunction(event) {
 
 }
 
+function checkEmptyFields(callback) {
+    var isValid = true;
+    $("input[type=text]:visible").each(function() {
+        
+        var element = $(this);
+        if (element.val() == "") {
+            isValid = false; 
+        }
+    });
+    callback(isValid);
+}
+
 function printJSON() {
 
-    data = JSON.stringify($('form').serializeArray());
-    console.log(data);
+    checkEmptyFields( (isOk) => {
+        
+        console.log(isOk);
+        if(isOk) {
+
+            data = JSON.stringify($('form').serializeArray());
+            console.log(data);
+
+            let xhr = new XMLHttpRequest();
+            let url = "http://127.0.0.1:8002/addTestV/";
+
+            xhr.open("POST", url, true);
+
+            // Set the request header i.e. which type of content you are sending
+            xhr.setRequestHeader("Content-Type", "application/json");
+
+            // Create a state change callback
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+
+                    // Print received data from server
+                    result.innerHTML = this.responseText;
+
+                }
+            };
+            // Sending data with the request
+            xhr.send(data);
 
 
-    let xhr = new XMLHttpRequest();
-    let url = "http://127.0.0.1:8002/addTestV/";
-    
-    xhr.open("POST", url, true);
 
-    // Set the request header i.e. which type of content you are sending
-    xhr.setRequestHeader("Content-Type", "application/json");
-
-    // Create a state change callback
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4 && xhr.status === 200) {
-
-            // Print received data from server
-            result.innerHTML = this.responseText;
-
+            var fs = require('fs');
+            fs.writeFile('myjsonfile.json', json, 'utf8', callback);
         }
-    };
-    // Sending data with the request
-    xhr.send(data);
-
-
-
-    var fs = require('fs');
-    fs.writeFile('myjsonfile.json', json, 'utf8', callback);    
+        else {
+            alert("There is an empty field!");
+        }
+    });
 }
 
 document.getElementById("save-form").addEventListener("click", printJSON);
