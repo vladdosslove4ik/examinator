@@ -10,85 +10,55 @@
     <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
 </head>
 <body>
-    <header>
-        <div class="logo">E<span>x</span>aminator</div>
-        <div class="menu__wrapper">
-          <nav class="menu">
-                  <div class="menu-item"><a href="#">Main</a></div>
-                  <div class="menu-item" style="color: #FFFFFF;"><a href="/libraty.html">Library</a></div>
-                  <div class="menu-item" ><a href="/test-create.html">Create</a></div>
-                  <div class="menu-item"><a href="#">About</a></div>
-          </div>
-          <div class="account__wrapper">
-            <div class="account">
-              <p>Hi, @username</p>
-              <div class="profile">
-                <p><a href="/login.html">Login</a></p>
-                <p><a href="/signup.html">Sing up</a></p>
-              </div>
-            </div>
-            <div class="profile-img__wrapper">
-              <img src="src/img/profile_icon.png" alt="profile_icon">
-            </div>
-            </div>
-          </div>
-        
+  <header>
+      <div class="logo">E<span>x</span>aminator</div>
+      <div class="menu__wrapper">
+        <nav class="menu">
+          <div class="menu-item"><a href="#">Main</a></div>
+          <div class="menu-item" style="color: #FFFFFF;"><a href="libraty.html">Library</a></div>
+          <div class="menu-item" ><a href="test-create.html">Create</a></div>
+          <div class="menu-item"><a href="#">About</a></div>
         </div>
-    </header>
-
-    <div class="body">
-      <div class="test">
-        <div class="test__wrapper">
-          <div class="test-controls__wrapper">
-            <div class="title">Title of question</div>
-            <div class="test-controls">
-              <button class="test">Test</button>
-              <button class="use">Use</button>
+        <div class="account__wrapper">
+          <div class="account">
+            <p>Hi, @username</p>
+            <div class="profile">
+              <p><a href="login.html">Login</a></p>
+              <p><a href="signup.html">Sing up</a></p>
             </div>
           </div>
-          <div class="test-info">
-            <div class="time">Unlimited</div>
-            <div class="questions">5 questions</div>
+          <div class="profile-img__wrapper">
+            <img src="src/img/profile_icon.png" alt="profile_icon">
+          </div>
           </div>
         </div>
-    </div>
-    <div class="body">
-      <div class="test">
-        <div class="test__wrapper">
-          <div class="test-controls__wrapper">
-            <div class="title">Title of question</div>
-            <div class="test-controls">
-              <a href="test-use.html" class="button">test</a>
-              <button class="test">Test</button>
-              <button class="use">Use</button>
-            </div>
-          </div>
-          <div class="test-info">
-            <div class="time">Unlimited</div>
-            <div class="questions">5 questions</div>
-          </div>
-        </div>
-    </div>
-    <div class="body">
-      <div class="test">
-        <div class="test__wrapper">
-          <div class="test-controls__wrapper">
-            <div class="title">Title of question</div>
-            <div class="test-controls">
-              <button class="test">Test</button>
-              <button class="use">Use</button>
-            </div>
-          </div>
-          <div class="test-info">
-            <div class="time">Unlimited</div>
-            <div class="questions">5 questions</div>
-          </div>
-        </div>
-    </div>
       
-    <footer>
+      </div>
+  </header>
 
-    </footer>
+  <div id="tests__wrapper" class="body">
+    <div id="hidden_copy" class="test" style="display: none;">
+      <div class="test__wrapper">
+        <div class="test-controls__wrapper">
+          <div class="title">Title of question</div>
+          <div class="test-controls">
+            <button class="test">Test</button>
+            <button class="use">Use</button>
+          </div>
+        </div>
+        <div class="test-info">
+          <div class="time">Unlimited</div>
+          <div class="questions">5 questions</div>
+        </div>
+      </div>
+    </div>
+  </div>
     
+  <footer>
+
+  </footer>
+  
+  <script src="src/js/library_loader.js"></script>
+  <script src="src/js/use_test.js"></script>
 </body>
 </html>

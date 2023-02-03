@@ -12,7 +12,8 @@
     "del": "^7.0.0",
     "gulp": "^4.0.2",
     "gulp-dependency-install": "^0.0.8",
-    "jquery": "^3.6.3"
+    "jquery": "^3.6.3",
+    "jquery.cookie": "^1.4.1"
   },
   "devDependencies": {
     "browser-sync": "^2.27.10",
