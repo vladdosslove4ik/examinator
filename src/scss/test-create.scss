@@ -21,3 +21,11 @@ body {
     }
     
 }
+
+
+
+.result {
+    padding: 50px;
+    background: $bg-color;
+    @include font-inter(400, 20px, $font-color);
+}

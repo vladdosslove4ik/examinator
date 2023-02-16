@@ -60,16 +60,16 @@ function printJSON() {
             };
             // Sending data with the request
             xhr.send(data);
-
+            alert("Test has been submitted!")
 
 
             var fs = require('fs');
             fs.writeFile('myjsonfile.json', json, 'utf8', callback);
+            alert("Test has been submitted!");
+            window.open("library.html","_self");
         }
         else {
             alert("There is an empty field!");
         }
     });
 }
-
-document.getElementById("save-form").addEventListener("click", printJSON);
