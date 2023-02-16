@@ -1,5 +1,7 @@
 .body {
     @include content-zone;
+    margin-bottom: 120px;
+    clear: both;
 }
 
 .test {

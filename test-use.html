@@ -47,42 +47,23 @@
           </div>
           <div class="control-buttons">
             <button type="button" id="cancel" onclick="history.back()">Exit</button>
-            <button type="submit" id="save-form">Send</button>
+            <button type="button" id="check">Check</button>
           </div>
         </div>
       </div>
-
-      <div class="test-question">
+      
+      <div id="hidden_copy" class="test-question" style="display: none;">
         <div class="test-question__wrapper">
           <div class="question-title-controls__wrapper">
-          <div class="question-title">Question title</div>
+            <div class="question-title">Question title</div>
           </div>
           <div class="additional-info">Additional question info</div>
           <div class="question-answers__wrapper">
-            <div class="answer__wrapper">
-              <button id="11" type="button" class="selected">Selected answer</button>
-              <button id="12" type="button" class="unselected">Answer</button>
-              <button id="13" type="button" class="unselected">Answer</button>
-                
-            </div>
+            <div class="answer__wrapper"></div>
           </div>
         </div>
       </div>
-      <div class="test-question">
-          <div class="test-question__wrapper">
-            <div class="question-title-controls__wrapper">
-            <div class="question-title">Question title</div>
-            </div>
-            <div class="additional-info">Additional question info</div>
-            <div class="question-answers__wrapper">
-              <div class="answer__wrapper">
-                <button id="21" type="button" class="unselected">Answer</button>
-                <button id="22" type="button" class="selected">Selected answer</button>
-                <button id="23" type="button" class="unselected">Answer</button>
-              </div>
-            </div>
-          </div>
-        </div>
+      <button type="button" id="hidden_copy" class="unselected" style="display: none;">Answer</button>
     </form>
   </div>
   <footer>
@@ -90,6 +71,7 @@
   </footer>
   <script src="src/js/onclick.js"></script>
   <script src="src/js/fill-test.js"></script>
+  <script src="src/js/check-answers.js"></script>
 </body>
 
 </html>
